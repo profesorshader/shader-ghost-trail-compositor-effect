@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bhrk3povd78wb"]
+
+[ext_resource type="Script" uid="uid://d2uo03kjqgwgd" path="res://scripts/compositor_effects/draw_motion_vectors.gd" id="1_68kjq"]
+[ext_resource type="Script" uid="uid://ho00b5u3ovp2" path="res://scripts/move_object.gd" id="2_rm7ve"]
+
+[sub_resource type="Environment" id="Environment_6taee"]
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_riupw"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = true
+needs_normal_roughness = false
+script = ExtResource("1_68kjq")
+metadata/_custom_type_script = "uid://d2uo03kjqgwgd"
+
+[sub_resource type="Compositor" id="Compositor_drsdo"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_riupw")])
+
+[sub_resource type="BoxMesh" id="BoxMesh_6taee"]
+
+[node name="Node3D" type="Node3D" unique_id=478034555]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2145480349]
+environment = SubResource("Environment_6taee")
+compositor = SubResource("Compositor_drsdo")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=903772159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1216878297]
+mesh = SubResource("BoxMesh_6taee")
+script = ExtResource("2_rm7ve")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1265373303]
+transform = Transform3D(0.95742697, 0.16358298, 0.2378533, -0.28867558, 0.54254246, 0.78886884, 0, -0.8239468, 0.5666672, 0, 0, 0)

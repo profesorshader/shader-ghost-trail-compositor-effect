@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://w0b6a8oys1x8"
+path="res://.godot/imported/ghost_trail.glsl-0c1ad195e3fcac3eddab44f47adc5f83.res"
+
+[deps]
+
+source_file="res://shaders/compositor_effects/ghost_trail.glsl"
+dest_files=["res://.godot/imported/ghost_trail.glsl-0c1ad195e3fcac3eddab44f47adc5f83.res"]
+
+[params]
+

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://jpmlhkvx56rf"]
+
+[ext_resource type="Script" uid="uid://4mpsxcxepn6w" path="res://scripts/compositor_effects/ghost_trail.gd" id="1_riupw"]
+[ext_resource type="Script" uid="uid://ho00b5u3ovp2" path="res://scripts/move_object.gd" id="2_fcvww"]
+
+[sub_resource type="Environment" id="Environment_wvkt0"]
+background_mode = 1
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_68kjq"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = true
+needs_normal_roughness = false
+script = ExtResource("1_riupw")
+metadata/_custom_type_script = "uid://4mpsxcxepn6w"
+
+[sub_resource type="Compositor" id="Compositor_by8gx"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_68kjq")])
+
+[sub_resource type="BoxMesh" id="BoxMesh_6jueo"]
+
+[node name="GhostTrail" type="Node3D" unique_id=9285025]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=271787178]
+environment = SubResource("Environment_wvkt0")
+compositor = SubResource("Compositor_by8gx")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1098585912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1191626671]
+mesh = SubResource("BoxMesh_6jueo")
+script = ExtResource("2_fcvww")
+rotate = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1462627553]
+transform = Transform3D(0.9574269, 0.16358301, 0.23785329, -0.28867558, 0.54254246, 0.7888688, 0, -0.8239467, 0.56666714, 0, 0, 0)
