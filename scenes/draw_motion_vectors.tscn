@@ -5,7 +5,7 @@
 
 [sub_resource type="Environment" id="Environment_6taee"]
 
-[sub_resource type="CompositorEffect" id="CompositorEffect_riupw"]
+[sub_resource type="CompositorEffect" id="CompositorEffect_vdwne"]
 resource_local_to_scene = false
 resource_name = ""
 enabled = true
@@ -15,8 +15,8 @@ needs_normal_roughness = false
 script = ExtResource("1_68kjq")
 metadata/_custom_type_script = "uid://d2uo03kjqgwgd"
 
-[sub_resource type="Compositor" id="Compositor_drsdo"]
-compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_riupw")])
+[sub_resource type="Compositor" id="Compositor_sk15k"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_vdwne")])
 
 [sub_resource type="BoxMesh" id="BoxMesh_6taee"]
 
@@ -24,7 +24,7 @@ compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_riup
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2145480349]
 environment = SubResource("Environment_6taee")
-compositor = SubResource("Compositor_drsdo")
+compositor = SubResource("Compositor_sk15k")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=903772159]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
